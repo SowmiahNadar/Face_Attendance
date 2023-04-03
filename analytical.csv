@@ -1,0 +1,8 @@
+Students
+"{'last_attendance_time': '2023-03-13 10:04:21', 'major': 'Data Science', 'name': 'Samir Sengupta', 'standing': 'G', 'starting_year': 2021, 'total_attendance': 12, 'year': 3}"
+"{'last_attendance_time': '2023-3-11 00:54:34', 'major': 'B.Tech', 'name': 'Sundar Pichai', 'standing': 'G', 'starting_year': 2021, 'total_attendance': 8, 'year': 4}"
+"{'last_attendance_time': '2023-03-13 10:04:37', 'major': 'Data Science', 'name': 'Sowmiah Nadar', 'standing': 'G', 'starting_year': 2021, 'total_attendance': 20, 'year': 4}"
+"{'last_attendance_time': '2022-12-11 00:54:34', 'major': 'Robotics', 'name': 'Murtaza Hassan', 'standing': 'G', 'starting_year': 2017, 'total_attendance': 7, 'year': 4}"
+"{'last_attendance_time': '2023-3-11 00:54:34', 'major': 'BMMS', 'name': 'MS Dhoni', 'standing': 'G', 'starting_year': 2021, 'total_attendance': 8, 'year': 5}"
+"{'last_attendance_time': '2022-12-11 00:54:34', 'major': 'Economics', 'name': 'Emly Blunt', 'standing': 'B', 'starting_year': 2021, 'total_attendance': 12, 'year': 1}"
+"{'last_attendance_time': '2022-12-11 00:54:34', 'major': 'Physics', 'name': 'Elon Musk', 'standing': 'G', 'starting_year': 2020, 'total_attendance': 7, 'year': 2}"

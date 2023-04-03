@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detained and Non-Detained Students</title>
+  <!-- Add Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+    const firebaseConfig = {
+	apiKey: "AIzaSyBrU4tuBPQkIiheV95RpZwFQHQnaPbmm_o",
+    authDomain: "faceattendancerealtime-45fd2.firebaseapp.com",
+    databaseURL: "https://faceattendancerealtime-45fd2-default-rtdb.firebaseio.com",
+    projectId: "faceattendancerealtime-45fd2",
+    storageBucket: "faceattendancerealtime-45fd2.appspot.com",
+    messagingSenderId: "1098198118851",
+    appId: "1:1098198118851:web:90c581a62e248223908d76",
+    measurementId: "G-N327TBDVTB"
+    };
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    // Fetch student data from the Firebase Realtime Database
+    const studentsRef = ref(database, 'Students');
+    onValue(studentsRef, (snapshot) => {
+      const data = snapshot.val();
+
+      // Calculate attendance percentage for each student and determine detained/non-detained status
+      const students = [];
+      for (const [id, studentInfo] of Object.entries(data)) {
+        const classes_held = 30;
+        const attendance_percentage = (studentInfo['total_attendance'] / classes_held) * 100;
+        const status = attendance_percentage >= 75 ? 'Non-Detained' : 'Detained';
+        students.push({ id, attendance_percentage, status });
+      }
+
+      // Display the list of detained and non-detained students in HTML
+      const detainedStudents = students.filter((student) => student.status === 'Detained');
+      const nonDetainedStudents = students.filter((student) => student.status === 'Non-Detained');
+
+      const detainedList = document.querySelector('#detained');
+      detainedList.innerHTML = detainedStudents.map((student) => `<li>${student.id}: ${student.attendance_percentage}%</li>`).join('');
+
+      const nonDetainedList = document.querySelector('#non-detained');
+      nonDetainedList.innerHTML = nonDetainedStudents.map((student) => `<li>${student.id}: ${student.attendance_percentage}%</li>`).join('');
+    });
+  </script>
+</head>
+<body>
+  <h1>Detained and Non-Detained Students</h1>
+  <h2>Detained Students:</h2>
+  <ul id="detained"></ul>
+  <h2>Non-Detained Students:</h2>
+  <ul id="non-detained"></ul>
+</body>
+</html>
