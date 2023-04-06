@@ -2,9 +2,9 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
  
-cred = credentials.Certificate("faceattendancerealtime-45fd2-firebase-adminsdk-rjc0b-b4ce7e8443.json")
+cred = credentials.Certificate("faceattendancerealtime-fd2-firebase-adminsdk-rjc0b-b4ce7e8443.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://faceattendancerealtime-45fd2-default-rtdb.firebaseio.com/"
+    'databaseURL': "https://faceattendancerealtime-fd2-default-rtdb.firebaseio.com/"
 })
  
 ref = db.reference('Students')
