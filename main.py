@@ -11,10 +11,10 @@ import numpy as np
 from datetime import datetime
 import os
  
-cred = credentials.Certificate("faceattendancerealtime-45fd2-firebase-adminsdk-rjc0b-b4ce7e8443.json")
+cred = credentials.Certificate("faceattendancerealtime-fd2-firebase-adminsdk-rjc0b-b4ce7e8443.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://faceattendancerealtime-45fd2-default-rtdb.firebaseio.com/",
-    'storageBucket': "faceattendancerealtime-45fd2.appspot.com"
+    'databaseURL': "https://faceattendancerealtime-fd2-default-rtdb.firebaseio.com/",
+    'storageBucket': "faceattendancerealtime-fd2.appspot.com"
 })
  
 bucket = storage.bucket()
